@@ -34,7 +34,7 @@ Após iniciar a aplicação, acesse o endpoint abaixo para realizar os testes:
 http://localhost:3000/api/agendamentos
 ```
 
-##Listar Agendamentos
+## Listar Agendamentos
 Método
 GET /api/agendamentos
 URL
@@ -43,7 +43,7 @@ URL
 http://localhost:3000/api/agendamentos
 ```
 
-##Criar Agendamento
+## Criar Agendamento
 Método
 POST /api/criarAgendamento
 URL
