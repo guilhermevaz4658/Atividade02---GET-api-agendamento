@@ -34,4 +34,34 @@ Após iniciar a aplicação, acesse o endpoint abaixo para realizar os testes:
 http://localhost:3000/api/agendamentos
 ```
 
-Você pode utilizar ferramentas como Postman, Insomnia ou cURL para realizar as requisições.
+Listar Agendamentos
+Método
+GET /api/agendamentos
+URL
+http://localhost:3000/api/agendamentos
+
+Criar Agendamento
+Método
+POST /api/criarAgendamento
+URL
+http://localhost:3000/api/criarAgendamento
+Ferramenta Utilizada
+
+Os testes desta rota foram realizados utilizando o Thunder Client (extensão do VS Code).
+
+Como Testar no Thunder Client
+Abrir o VS Code.
+Abrir a extensão Thunder Client.
+Criar uma nova requisição.
+Selecionar o método POST.
+Informar a URL:
+http://localhost:3000/api/criarAgendamento
+Acessar a aba Body.
+Selecionar o formato JSON.
+Informar os dados do agendamento.
+Exemplo de Body
+{
+  "date": "2026-06-10 14:00:00",
+  "usuarioID": 1,
+  "servicoID": 2
+}
