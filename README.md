@@ -26,7 +26,7 @@ Inicie o servidor executando:
 node server.js
 ```
 
-## Testando o Endpoint
+## Testando os Endpoints
 
 Após iniciar a aplicação, acesse o endpoint abaixo para realizar os testes:
 
