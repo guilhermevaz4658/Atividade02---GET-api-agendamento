@@ -43,6 +43,15 @@ URL
 http://localhost:3000/api/agendamentos
 ```
 
+## Listar Agendamento por ID
+Método
+GET /api/agendamentos/(Inserir ID do agendamento para busca)
+URL
+
+```
+http://localhost:3000/api/agendamentos/:id
+```
+
 ## Criar Agendamento
 Método
 POST /api/criarAgendamento
