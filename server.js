@@ -73,6 +73,42 @@ app.post('/api/criarAgendamento', async (req, res) => {
     }
 })
 
+app.get('/api/agendamentos/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const [agendamento] = await conexao.query(
+            `SELECT 
+                agendamentos.id,
+                usuarios.nome AS usuario_nome,
+                servicos.nome AS servico_nome,
+                servicos.preco,
+                agendamentos.data_agendamento
+            FROM agendamentos
+            INNER JOIN usuarios
+                ON agendamentos.usuario_id = usuarios.id
+            INNER JOIN servicos
+                ON agendamentos.servico_id = servicos.id
+            WHERE agendamentos.id = ?`,
+            [id]
+        );
+
+        if (agendamento.length === 0) {
+            return res.status(404).json({
+                erro: "Agendamento não encontrado"
+            });
+        }
+
+        res.status(200).json(agendamento[0]);
+
+    } catch (error) {
+        res.status(500).json({
+            erro: "Erro ao conectar com MySQL",
+            mensagem: error.message
+        });
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server rodando em http://localhost:${port}`)
 })
